@@ -4,8 +4,8 @@
   # publish = "public"
 
 [functions]
-  node_bundler = "esbuild" 
-  python = "3.12"        
+  [functions.python] 
+    version = "3.12"  
 
 [[redirects]]
   from = "/*"
