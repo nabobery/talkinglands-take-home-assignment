@@ -1,5 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt"
+  # command = "pip install -r requirements.txt" # Temporarily comment out pip install
+  command = "# Required placeholder build command" # Add this placeholder
   functions = "netlify/functions"
   # publish = "public"
 
