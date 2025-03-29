@@ -3,6 +3,8 @@ asyncpg==0.30.0
 fastapi==0.115.12
 GeoAlchemy2==0.17.1
 geopandas==1.0.1
+httpx==0.28.1
 matplotlib==3.10.1
 pydantic-settings==2.8.1
+pytest==8.3.5
 uvicorn==0.34.0
