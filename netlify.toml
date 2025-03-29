@@ -1,6 +1,6 @@
 [build]
   command = "pip install -r requirements.txt"
-  functions = "netlify/functions"  # Directory for serverless functions
+  functions = "functions"  # Directory for serverless functions
   publish = "."  # Root directory for static files (optional if no frontend)
 
 # Configure Python runtime for Netlify Functions
