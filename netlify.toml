@@ -1,14 +1,14 @@
 [build]
   command = "pip install -r requirements.txt"
-  functions = "netlify/functions"
-  base = "/"
-  # publish = "public"
+  functions = "netlify/functions"  # Directory for serverless functions
+  publish = "."  # Root directory for static files (optional if no frontend)
 
+# Configure Python runtime for Netlify Functions
 [functions]
-  [functions.python] 
-    version = "3.12"  
+  runtime = "python"  # Specify Python runtime
+  python_version = "3.12"  # Python version (Netlify supports up to 3.12 as of now)
 
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/main"
-  status = 200 
+  from = "/*"  # Catch all requests
+  to = "/.netlify/functions/main"  # Route to the FastAPI handler
+  status = 200  # Forward requests (not a redirect)

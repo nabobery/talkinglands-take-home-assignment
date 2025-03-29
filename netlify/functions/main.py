@@ -19,13 +19,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Include your routes
 app.include_router(points.router, prefix="/points", tags=["Points"])
 app.include_router(polygons.router, prefix="/polygons", tags=["Polygons"])
 app.include_router(spatial.router, prefix="/spatial", tags=["Spatial"])
 app.include_router(generate_map_image.router, prefix="/images", tags=["Images"])
 
-handler = Mangum(app)
+# Mangum handler for AWS Lambda
+handler = Mangum(app, lifespan="auto")  # "auto" handles lifespan in serverless
 
+# Optional: For local development (not executed in Netlify)
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("functions.main:app", host="0.0.0.0", port=8000, reload=True) 
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
