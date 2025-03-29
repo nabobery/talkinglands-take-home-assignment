@@ -5,8 +5,9 @@
 
 # Configure Python runtime for Netlify Functions
 [functions]
-  runtime = "python"  # Specify Python runtime
-  python_version = "3.12"  # Python version (Netlify supports up to 3.12 as of now)
+  [functions.python]
+    version = "3.12"
+
 
 [[redirects]]
   from = "/*"  # Catch all requests
