@@ -3,6 +3,10 @@
   functions = "netlify/functions"
   # publish = "public"
 
+[functions]
+  node_bundler = "esbuild" 
+  python = "3.12"        
+
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/main"
